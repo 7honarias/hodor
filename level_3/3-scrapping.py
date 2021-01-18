@@ -57,7 +57,7 @@ for i in range(votescurrent, votes):
     f.write(r.content)
     f.close()
 
-    # img = cv2.imread("captcha.png")
+    #img = cv2.imread("captcha.png")
     #readimg = pytesseract.image_to_string(Image.open('captcha.png'))
     img = cleanFile(r.content, 'captcha.png')
     #img = Image.open(BytesIO(r.content))
@@ -67,7 +67,7 @@ for i in range(votescurrent, votes):
     response1 = s.post(url, data=data, cookies=cookie, headers=headers)
     if response1.status_code is 200 and success in response1.text:
         ok += 1
-        print("{} Ok   ".format(votescurrent), end='\r', flush=True)
+        print("{} Ok".format(votescurrent), end='\r', flush=True)
     else:
         fail += 1
         print("{} Fail".format(fail), end='\r', flush=True)
